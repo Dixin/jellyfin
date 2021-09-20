@@ -49,7 +49,7 @@ namespace Emby.Server.Implementations.Library.Resolvers.TV
             if ((season != null ||
                  string.Equals(args.GetCollectionType(), CollectionType.TvShows, StringComparison.OrdinalIgnoreCase) ||
                  args.HasParent<Series>())
-                && (parent is Series || !BaseItem.AllExtrasTypesFolderNames.Contains(parent.Name, StringComparer.OrdinalIgnoreCase)))
+                && (parent is Series || !BaseItem.AllExtrasTypesFolderNames.ContainsKey(parent.Name)))
             {
                 var episode = ResolveVideo<Episode>(args, false);
 
